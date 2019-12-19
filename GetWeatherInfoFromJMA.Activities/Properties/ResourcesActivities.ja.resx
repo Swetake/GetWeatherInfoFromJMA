@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RegularFeed" xml:space="preserve">
+    <value>定時フィード</value>
+    <comment>property group</comment>
+  </data>
+  <data name="ExtraFeed" xml:space="preserve">
+    <value>随時フィード</value>
+    <comment>property group</comment>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>出力</value>
+    <comment>property group</comment>
+  </data>
+  <data name="WeatherInfoScopeDisplayName" xml:space="preserve">
+    <value>気象情報スコープ</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeDescription" xml:space="preserve">
+    <value>気象情報スコープ</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqRegularDescription" xml:space="preserve">
+    <value>少なくとも10分間の情報が保持された定時フィード。1分毎に更新される</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqRegularDisplayName" xml:space="preserve">
+    <value>既定の高頻度フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeURLRegularDescription" xml:space="preserve">
+    <value>個別の定時フィードURL</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeURLRegularDisplayName" xml:space="preserve">
+    <value>個別URL</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermPeriodicDescription" xml:space="preserve">
+    <value>数日間の情報が保持された定期フィード。１時間に一回更新される。</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermPeriodicDisplayName" xml:space="preserve">
+    <value>既定の長期フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="MetadataValidationError" xml:space="preserve">
+    <value>Please provide a value for {0}</value>
+    <comment>validation error</comment>
+  </data>
+  <data name="GetWarningDescription" xml:space="preserve">
+    <value>警報・注意報の取得</value>
+    <comment>description</comment>
+  </data>
+  <data name="GetWarningDisplayName" xml:space="preserve">
+    <value>警報・注意報の取得</value>
+    <comment>display name</comment>
+  </data>
+  <data name="GetWarningAreaDescription" xml:space="preserve">
+    <value>警報・注意報を取得したい地域</value>
+    <comment>description</comment>
+  </data>
+  <data name="GetWarningAreaDisplayName" xml:space="preserve">
+    <value>地域</value>
+    <comment>display name</comment>
+  </data>
+  <data name="GetWarningKeyNameSeparatorDescription" xml:space="preserve">
+    <value>結果辞書のキーで気象官署と地域名をつなぐセパレーター</value>
+    <comment>description</comment>
+  </data>
+  <data name="GetWarningKeyNameSeparatorDisplayName" xml:space="preserve">
+    <value>セパレーター文字</value>
+    <comment>display name</comment>
+  </data>
+  <data name="GetWarningIgnoreIdListDescription" xml:space="preserve">
+    <value>無視するIDリスト</value>
+    <comment>description</comment>
+  </data>
+  <data name="GetWarningIgnoreIdListDisplayName" xml:space="preserve">
+    <value>無視するIDリスト</value>
+    <comment>display name</comment>
+  </data>
+  <data name="EqVolFeed" xml:space="preserve">
+    <value>地震火山フィード</value>
+    <comment>property group</comment>
+  </data>
+  <data name="OtherFeed" xml:space="preserve">
+    <value>その他フィード</value>
+    <comment>property group</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqExtraDescription" xml:space="preserve">
+    <value>少なくとも10分間の情報が保持された随時フィード。1分毎に更新される</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqExtraDisplayName" xml:space="preserve">
+    <value>既定の高頻度フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqEqVolDescription" xml:space="preserve">
+    <value>少なくとも10分間の情報が保持された地震火山フィード。1分毎に更新される。</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqEqVolDisplayName" xml:space="preserve">
+    <value>既定の高頻度フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqOtherDescription" xml:space="preserve">
+    <value>少なくとも10分間の情報が保持されたその他フィード。1分毎に更新される</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultHighFreqOtherDisplayName" xml:space="preserve">
+    <value>既定の高頻度フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermExtraDescription" xml:space="preserve">
+    <value>数日間の情報が保持された随時フィード。１時間に一回更新される。</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermExtraDisplayName" xml:space="preserve">
+    <value>既定の長期フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermEqVolDescription" xml:space="preserve">
+    <value>数日間の情報が保持された地震火山フィード。１時間に一回更新される。</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermEqVolDisplayName" xml:space="preserve">
+    <value>既定の長期フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermOtherDescription" xml:space="preserve">
+    <value>数日間の情報が保持されたその他フィード。１時間に一回更新される。</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeDefaultLongTermOtherDisplayName" xml:space="preserve">
+    <value>既定の長期フィード</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeOutputDescription" xml:space="preserve">
+    <value>Output Feeds as Dictionary type</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeOutputDisplayName" xml:space="preserve">
+    <value>出力</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeURLExtraDescription" xml:space="preserve">
+    <value>個別の随時フィードURL</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeURLExtraDisplayName" xml:space="preserve">
+    <value>個別URL</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeURLEqVolDescription" xml:space="preserve">
+    <value>個別の地震・火山フィードURL</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeURLEqVolDisplayName" xml:space="preserve">
+    <value>個別URL</value>
+    <comment>display name</comment>
+  </data>
+  <data name="WeatherInfoScopeURLOtherDescription" xml:space="preserve">
+    <value>個別のその他フィードURL</value>
+    <comment>description</comment>
+  </data>
+  <data name="WeatherInfoScopeURLOtherDisplayName" xml:space="preserve">
+    <value>個別URL</value>
+    <comment>display name</comment>
+  </data>
+  <data name="UrlDefaultHighFreqEqVol" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/eqvol.xml</value>
+  </data>
+  <data name="UrlDefaultHighFreqExtra" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/extra.xml</value>
+  </data>
+  <data name="UrlDefaultHighFreqOther" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/other.xml</value>
+  </data>
+  <data name="UrlDefaultHighFreqRegular" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/regular.xml</value>
+  </data>
+  <data name="UrlDefaultLongTermEqVol" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml</value>
+  </data>
+  <data name="UrlDefaultLongTermExtra" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/extra_l.xml</value>
+  </data>
+  <data name="UrlDefaultLongTermOther" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/other_l.xml</value>
+  </data>
+  <data name="UrlDefaultLongTermRegular" xml:space="preserve">
+    <value>http://www.data.jma.go.jp/developer/xml/feed/regular_l.xml</value>
+  </data>
+  <data name="GetWarningProcessedIdListDescription" xml:space="preserve">
+    <value>処理済IDリスト</value>
+    <comment>description</comment>
+  </data>
+  <data name="GetWarningProcessedIdListDisplayName" xml:space="preserve">
+    <value>処理済IDリスト</value>
+    <comment>display name</comment>
+  </data>
+  <data name="GetWarningResultDescription" xml:space="preserve">
+    <value>結果</value>
+    <comment>description</comment>
+  </data>
+  <data name="GetWarningResultDisplayName" xml:space="preserve">
+    <value>結果</value>
+    <comment>display name</comment>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>入力</value>
+  </data>
+  <data name="GetXmlAtomFeedTypeDescription" xml:space="preserve">
+    <value>Atomフィードタイプ</value>
+  </data>
+  <data name="GetXmlAtomFeedTypeDisplayName" xml:space="preserve">
+    <value>Atomフィードタイプ</value>
+  </data>
+  <data name="GetXmlDescription" xml:space="preserve">
+    <value>指定したXMLの取得</value>
+  </data>
+  <data name="GetXmlDisplayName" xml:space="preserve">
+    <value>XMLの取得</value>
+  </data>
+  <data name="GetXmlInformationNameDescription" xml:space="preserve">
+    <value>XMLの情報名</value>
+  </data>
+  <data name="GetXmlInformationNameDisplayName" xml:space="preserve">
+    <value>XMLの情報名</value>
+  </data>
+  <data name="GetXmlMeteorologicalOfficeDescription" xml:space="preserve">
+    <value>気象台名等の気象官署を記述します。</value>
+  </data>
+  <data name="GetXmlMeteorologicalOfficeName" xml:space="preserve">
+    <value>気象官署名</value>
+  </data>
+  <data name="GetXmlResultDescription" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="GetXmlResultDisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="GetXmlReturnAllMatchesDescription" xml:space="preserve">
+    <value>合致するものすべて</value>
+  </data>
+  <data name="GetXmlReturnAllMatchesDisplayName" xml:space="preserve">
+    <value>合致するものすべて</value>
+  </data>
+  <data name="GetAtomFeedDescription" xml:space="preserve">
+    <value>Atomフィードの取得</value>
+  </data>
+  <data name="GetAtomFeedDisplayName" xml:space="preserve">
+    <value>Atomフィードの取得</value>
+  </data>
+  <data name="GetAtomFeedResultDescription" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="GetAtomFeedResultDisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="GetForecastDescription" xml:space="preserve">
+    <value>天気予報の取得</value>
+  </data>
+  <data name="GetForecastDisplayName" xml:space="preserve">
+    <value>天気予報の取得</value>
+  </data>
+  <data name="GetForecastResultDescription" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="GetForecastResultDisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="GetForecastAreaDescription" xml:space="preserve">
+    <value>地域</value>
+  </data>
+  <data name="GetForecastAreaDisplayName" xml:space="preserve">
+    <value>地域</value>
+  </data>
+</root>

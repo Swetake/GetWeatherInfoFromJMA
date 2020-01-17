@@ -47,7 +47,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+        ///   すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -430,7 +430,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/eqvol.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/eqvol.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultHighFreqEqVol {
             get {
@@ -439,7 +439,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/extra.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/extra.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultHighFreqExtra {
             get {
@@ -448,7 +448,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/other.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/other.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultHighFreqOther {
             get {
@@ -457,7 +457,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/regular.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/regular.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultHighFreqRegular {
             get {
@@ -466,7 +466,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultLongTermEqVol {
             get {
@@ -475,7 +475,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/extra_l.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultLongTermExtra {
             get {
@@ -484,7 +484,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/other_l.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/other_l.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultLongTermOther {
             get {
@@ -493,7 +493,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         }
         
         /// <summary>
-        ///   http://www.data.jma.go.jp/developer/xml/feed/regular_l.xml に類似しているローカライズされた文字列を検索します。
+        ///   https://www.data.jma.go.jp/developer/xml/feed/regular_l.xml に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UrlDefaultLongTermRegular {
             get {

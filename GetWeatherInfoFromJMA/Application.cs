@@ -39,7 +39,7 @@ namespace GetWeatherInfoFromJMA
         // Allows Initialization (the step right after constructor runs) to be asynchronous
         public Task Initialization => InitializeAsync();
 
-        // Asynchronously creates an authenticated client to make all API calls
+        // Asynchronously init
         private async Task InitializeAsync()
         {
             KeyValuePair<string, SyndicationFeed>[] listSyndicationFeed;
@@ -174,11 +174,12 @@ namespace GetWeatherInfoFromJMA
                             if (xKind.Elements(xns + "Addition").Count() > 0)
                             {
                                 IEnumerable<XElement> ieXadd = xKind.Element(xns + "Addition").Elements(xns + "Note");
+                                string notes = "";
                                 foreach (XElement xAdd in ieXadd)
                                 {
-                                    dicResultItem["Addition"] += (xAdd.Value+" ");
+                                    notes += (xAdd.Value + " ");
                                 }
-                                if (dicResultItem.ContainsKey("Addition")) { dicResultItem["Addition"] = (dicResultItem["Addition"]).Trim(); }
+                                if (!String.IsNullOrEmpty(notes.Trim())) { dicResultItem["Addition"] = notes.Trim(); }
                             }
                             listDic.Add(dicResultItem);
                         }

@@ -286,28 +286,28 @@
     <comment>display name</comment>
   </data>
   <data name="UrlDefaultHighFreqEqVol" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/eqvol.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/eqvol.xml</value>
   </data>
   <data name="UrlDefaultHighFreqExtra" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/extra.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/extra.xml</value>
   </data>
   <data name="UrlDefaultHighFreqOther" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/other.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/other.xml</value>
   </data>
   <data name="UrlDefaultHighFreqRegular" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/regular.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/regular.xml</value>
   </data>
   <data name="UrlDefaultLongTermEqVol" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml</value>
   </data>
   <data name="UrlDefaultLongTermExtra" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/extra_l.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml</value>
   </data>
   <data name="UrlDefaultLongTermOther" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/other_l.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/other_l.xml</value>
   </data>
   <data name="UrlDefaultLongTermRegular" xml:space="preserve">
-    <value>http://www.data.jma.go.jp/developer/xml/feed/regular_l.xml</value>
+    <value>https://www.data.jma.go.jp/developer/xml/feed/regular_l.xml</value>
   </data>
   <data name="GetWarningProcessedIdListDescription" xml:space="preserve">
     <value>IDs which have been processed</value>

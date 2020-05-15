@@ -394,4 +394,34 @@
   <data name="GetForecastAreaDisplayName" xml:space="preserve">
     <value>Area</value>
   </data>
+  <data name="GetTyphoonInfoDescription" xml:space="preserve">
+    <value>Get Typhoon Information</value>
+  </data>
+  <data name="GetTyphoonInfoDisplayName" xml:space="preserve">
+    <value>GetTyphoonInfo</value>
+  </data>
+  <data name="GetTyphoonInfoIgnoreIdListDescription" xml:space="preserve">
+    <value>ID list to be ignored</value>
+  </data>
+  <data name="GetTyphoonInfoIgnoreIdListDisplayName" xml:space="preserve">
+    <value>IgnoreIdList</value>
+  </data>
+  <data name="GetTyphoonInfoNumberListDescription" xml:space="preserve">
+    <value>Typhoon number list</value>
+  </data>
+  <data name="GetTyphoonInfoNumberListDisplayName" xml:space="preserve">
+    <value>NumberList</value>
+  </data>
+  <data name="GetTyphoonInfoResultDescription" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="GetTyphoonInfoResultDisplayName" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="GetTyphoonInfoProcessedIdListDescription" xml:space="preserve">
+    <value>ProcessedIdList</value>
+  </data>
+  <data name="GetTyphoonInfoProcessedIdListDisplayName" xml:space="preserve">
+    <value>ProcessedIdList</value>
+  </data>
 </root>

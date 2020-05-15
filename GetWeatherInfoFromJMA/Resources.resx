@@ -150,4 +150,10 @@
   <data name="GetWarning" xml:space="preserve">
     <value>GetWarning</value>
   </data>
+  <data name="GetTyphoonInfo" xml:space="preserve">
+    <value>GetTyphoonInfo</value>
+  </data>
+  <data name="TYPHOON_TITLE" xml:space="preserve">
+    <value>全般台風情報（定型）</value>
+  </data>
 </root>

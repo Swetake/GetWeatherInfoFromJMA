@@ -37,6 +37,10 @@ namespace GetWeatherInfoFromJMA.Activities.Design
             builder.AddCustomAttributes(typeof(GetWarning), new DesignerAttribute(typeof(GetWarningDesigner)));
             builder.AddCustomAttributes(typeof(GetWarning), new HelpKeywordAttribute("https://go.uipath.com"));
 
+            builder.AddCustomAttributes(typeof(GetTyphoonInfo), categoryAttributeExtra);
+            builder.AddCustomAttributes(typeof(GetTyphoonInfo), new DesignerAttribute(typeof(GetTyphoonInfoDesigner)));
+            builder.AddCustomAttributes(typeof(GetTyphoonInfo), new HelpKeywordAttribute("https://go.uipath.com"));
+
             // Regular Feed
             builder.AddCustomAttributes(typeof(GetForecast), categoryAttributeRegular);
             builder.AddCustomAttributes(typeof(GetForecast), new DesignerAttribute(typeof(GetForecastDesigner)));

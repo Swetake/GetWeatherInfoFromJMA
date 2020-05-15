@@ -94,6 +94,8 @@ namespace GetWeatherInfoFromJMA.Activities
 
         internal static string ParentContainerPropertyTag => "WeatherInfoScope";
 
+        Application application;
+
         #endregion
 
 
@@ -215,7 +217,7 @@ namespace GetWeatherInfoFromJMA.Activities
                 }
             }
 
-            var application = new Application(dicInputs);
+            application = new Application(dicInputs);
             
             if (Body != null)
             {
@@ -225,12 +227,12 @@ namespace GetWeatherInfoFromJMA.Activities
 
         private void OnFaulted(NativeActivityFaultContext faultContext, Exception propagatedException, ActivityInstance propagatedFrom)
         {
-            //TODO
+            application.Dispose();
         }
 
         private void OnCompleted(NativeActivityContext context, ActivityInstance completedInstance)
         {
-            //TODO
+            application.Dispose();
         }
 
         #endregion

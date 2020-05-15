@@ -19,7 +19,7 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
     // または Visual Studio のようなツールを使用して自動生成されました。
     // メンバーを追加または削除するには、.ResX ファイルを編集して、/str オプションと共に
     // ResGen を実行し直すか、または VS プロジェクトをビルドし直します。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class ResourcesActivities {
@@ -165,6 +165,96 @@ namespace GetWeatherInfoFromJMA.Activities.Properties {
         internal static string GetForecastResultDisplayName {
             get {
                 return ResourceManager.GetString("GetForecastResultDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Get Typhoon Information に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoDescription {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   GetTyphoonInfo に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoDisplayName {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ID list to be ignored に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoIgnoreIdListDescription {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoIgnoreIdListDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   IgnoreIdList に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoIgnoreIdListDisplayName {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoIgnoreIdListDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Typhoon number list に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoNumberListDescription {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoNumberListDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   NumberList に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoNumberListDisplayName {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoNumberListDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ProcessedIdList に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoProcessedIdListDescription {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoProcessedIdListDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ProcessedIdList に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoProcessedIdListDisplayName {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoProcessedIdListDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Result に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoResultDescription {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoResultDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Result に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GetTyphoonInfoResultDisplayName {
+            get {
+                return ResourceManager.GetString("GetTyphoonInfoResultDisplayName", resourceCulture);
             }
         }
         

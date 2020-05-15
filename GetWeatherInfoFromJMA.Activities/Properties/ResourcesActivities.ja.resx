@@ -394,4 +394,34 @@
   <data name="GetForecastAreaDisplayName" xml:space="preserve">
     <value>地域</value>
   </data>
+  <data name="GetTyphoonInfoDescription" xml:space="preserve">
+    <value>台風情報の取得</value>
+  </data>
+  <data name="GetTyphoonInfoDisplayName" xml:space="preserve">
+    <value>台風情報の取得</value>
+  </data>
+  <data name="GetTyphoonInfoIgnoreIdListDescription" xml:space="preserve">
+    <value>無視するIDリスト</value>
+  </data>
+  <data name="GetTyphoonInfoIgnoreIdListDisplayName" xml:space="preserve">
+    <value>無視するIDリスト</value>
+  </data>
+  <data name="GetTyphoonInfoNumberListDescription" xml:space="preserve">
+    <value>情報を取得する台風の番号（第●号）のリスト</value>
+  </data>
+  <data name="GetTyphoonInfoNumberListDisplayName" xml:space="preserve">
+    <value>台風番号リスト</value>
+  </data>
+  <data name="GetTyphoonInfoProcessedIdListDescription" xml:space="preserve">
+    <value>処理済IDリスト</value>
+  </data>
+  <data name="GetTyphoonInfoProcessedIdListDisplayName" xml:space="preserve">
+    <value>処理済IDリスト</value>
+  </data>
+  <data name="GetTyphoonInfoResultDescription" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="GetTyphoonInfoResultDisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
 </root>

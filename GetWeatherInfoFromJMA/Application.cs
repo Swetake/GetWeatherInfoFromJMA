@@ -12,7 +12,7 @@ namespace GetWeatherInfoFromJMA
     /// Core class for GetWeatherInfoFromXML
     /// </summary>
     /// 
-    public partial class Application : IAsyncInitialization
+    public partial class Application : IAsyncInitialization, IDisposable
     {
 
         #region Properties
@@ -58,7 +58,10 @@ namespace GetWeatherInfoFromJMA
         }
         #endregion
 
-
+        public void Dispose()
+        {
+            weatherInfoContainer = null;
+        }
 
 
         #region Info Calls
@@ -108,7 +111,7 @@ namespace GetWeatherInfoFromJMA
             SyndicationFeed feed = weatherInfoContainer.AtomFeeds[Resources.EXTRA];
             IEnumerable<SyndicationItem> feedItemList = feed.Items;
             List<string> processedIdList = new List<string>();
-            Dictionary<string, List<Dictionary<string, String>>> result = new Dictionary<string, List<Dictionary<string, String>>>();
+            Dictionary<string, List<Dictionary<string, string>>> result = new Dictionary<string, List<Dictionary<string, string>>>();
 
             foreach (SyndicationItem item in feedItemList)
             {
@@ -118,32 +121,15 @@ namespace GetWeatherInfoFromJMA
                 {
                     string url = item.Links.First().Uri.ToString();
                     XDocument xdoc = XDocument.Load(url);
-
-                    IEnumerable<XElement> xTopElements = xdoc.Root.Elements();
-
-                    // Get Body element and Head element
-                    #region GetBodyElementandHeadElement
-                    XElement xBody = null;
-                    XElement xHead = null;
                     XNamespace xns = null;
-                    foreach (XElement elementItem in xTopElements)
-                    {
-                        xns = elementItem.Name.Namespace;
-                        if (elementItem.Name == xns + "Body") { xBody = elementItem; }
-                        if (elementItem.Name == xns + "Head") { xHead = elementItem; }
-                    }
-                    if (xBody == null || xHead == null)
-                    {
-                        throw new System.FormatException("Cannot find Body or Header Element(s).");
-                    } 
-                    #endregion
 
+                    GetHeadAndBody(xdoc, out XElement xHead, out XElement xBody);
 
                     //Get Item Elements based on Area dictionary
                     Dictionary<string, List<XElement>> dicAreaItem = GetItemsFromArea(area, xBody, authorName);
 
                     //Get ReportDate
-                    string strReportDateTime = GetReportDateTime(xHead);
+                    string strReportDateTime = GetChildText(xHead, "ReportDateTime");
 
                     //Create result Dictionary
                     foreach (string areaName in dicAreaItem.Keys)
@@ -222,29 +208,15 @@ namespace GetWeatherInfoFromJMA
                 {
                     string url = item.Links.First().Uri.ToString();
                     XDocument xdoc = XDocument.Load(url);
-
-                    IEnumerable<XElement> xTopElements = xdoc.Root.Elements();
-
-                    // Get Body element and Header element
-                    XElement xBody = null;
-                    XElement xHead = null;
                     XNamespace xns = null;
-                    foreach (XElement topElem in xTopElements)
-                    {
-                        xns = topElem.Name.Namespace;
-                        if (topElem.Name == xns + "Body") { xBody = topElem; }
-                        if (topElem.Name == xns + "Head") { xHead = topElem; }
-                    }
-                    if (xBody == null || xHead == null)
-                    {
-                        throw new System.FormatException("Cannot find Body or Header Element(s).");
-                    }
+
+                    GetHeadAndBody(xdoc, out XElement xHead, out XElement xBody);
 
                     //Get Item Element based on area dictionary
                     Dictionary<string, List<XElement>> dicAreaItem = GetItemsFromArea(area, xBody, authorName);
 
                     //Get ReportDate
-                    string strReportDateTime = GetReportDateTime(xHead);
+                    string strReportDateTime = GetChildText(xHead, "ReportDateTime");
 
                     //Iterate each area
                     foreach (string areaName in dicAreaItem.Keys)
@@ -311,6 +283,96 @@ namespace GetWeatherInfoFromJMA
             return Task.FromResult(weatherInfoContainer);
         }
 
+
+
+
+        /// <summary>
+        /// Get Typhoon Info from XML
+        /// </summary>
+        /// <param name="typhoonNumberList"></param>
+        /// <param name="ignoreIdList"></param>
+        /// <returns></returns>
+        public Task<WeatherInfoContainer> GetTyphoonInfo(List<Int32> typhoonNumberList, List<string> ignoreIdList)
+        {
+            SyndicationFeed feed = weatherInfoContainer.AtomFeeds[Resources.EXTRA];
+            IEnumerable<SyndicationItem> itemList = feed.Items;
+            List<string> processedIdList = new List<string>();
+            List<string> processedNumberStrList = new List<string>();
+            var result = new Dictionary<string, Dictionary<string, string>>();
+
+            foreach (SyndicationItem item in itemList)
+            {
+                string id = item.Id;
+                string authorName = item.Authors.First().Name;
+                if (item.Title.Text == Resources.TYPHOON_TITLE && !ignoreIdList.Contains(id))
+                {
+                    string url = item.Links.First().Uri.ToString();
+                    XDocument xdoc = XDocument.Load(url);
+                    XNamespace xns = null;
+
+                    GetHeadAndBody(xdoc, out XElement xHead, out XElement xBody);
+                    //Get Title
+                    string strTitle = GetChildText(xHead, "Title");
+                    //Get ReportDate
+                    string strReportDateTime = GetChildText(xHead,"ReportDateTime");
+
+                    string numStr = Microsoft.VisualBasic.Strings.StrConv(System.Text.RegularExpressions.Regex.Match(strTitle, @"(?<=台風第)\d+(?=号)").Value,Microsoft.VisualBasic.VbStrConv.Narrow, 0x411);
+
+                    //Check if already processed
+                    if (!processedNumberStrList.Contains(numStr))
+                    {
+                        if (typhoonNumberList.Count > 0)
+                        {
+                            if (!typhoonNumberList.Any(x => x == Int32.Parse(numStr)))
+                            {
+                                continue;
+                            }
+                        }
+                        string resultHeadlineString = "";
+                        string resultCommentString = "";
+
+                        var dictResultItem = new Dictionary<string, string>();
+
+                        // Get Headline text
+                        xns = xHead.Name.Namespace;
+                        IEnumerable<XElement> xElemComment = xHead.Descendants(xns + "Headline");
+                        foreach (XElement xe in xElemComment)
+                        {
+                            resultHeadlineString = xe.Element(xns + "Text").Value;
+                        }
+
+                        // Get Comment text
+                        xns = xBody.Name.Namespace;
+                        xElemComment = xBody.Descendants(xns + "Comment");
+                        foreach (XElement xeComment in xElemComment)
+                        {
+                            var xElemText = xeComment.Descendants(xns + "Text");
+                            foreach (XElement xeText in xElemText)
+                            {
+                                resultCommentString += xeText.Value;
+                            }
+                        }
+                        dictResultItem["ReportDateTime"] = strReportDateTime;
+                        dictResultItem["Comment"] = resultCommentString;
+                        dictResultItem["Headline"] = resultHeadlineString;
+
+                        result[numStr] = dictResultItem;
+
+                        processedIdList.Add(id);
+                        processedNumberStrList.Add(numStr);
+                    }
+                }
+            }
+
+            weatherInfoContainer.Result[Resources.GetTyphoonInfo] = result;
+            weatherInfoContainer.ProcessedID[Resources.GetTyphoonInfo] = processedIdList;
+
+            return Task.FromResult(weatherInfoContainer);
+        }
+
+
+
+
         /// <summary>
         /// Get each XML Data
         /// </summary>
@@ -373,6 +435,27 @@ namespace GetWeatherInfoFromJMA
         }
 
 
+
+        private void GetHeadAndBody(XDocument xdoc, out XElement xHead, out XElement xBody)
+        {
+            IEnumerable<XElement> xTopElements = xdoc.Root.Elements();
+            // Get Body element and Head element
+            xBody = null;
+            xHead = null;
+
+            foreach (XElement topElem in xTopElements)
+            {
+                XNamespace xns = topElem.Name.Namespace;
+                if (topElem.Name == xns + "Body") { xBody = topElem; }
+                if (topElem.Name == xns + "Head") { xHead = topElem; }
+            }
+            if (xBody == null || xHead == null)
+            {
+                throw new System.FormatException("Cannot find Body or Header Element(s).");
+            }
+        }
+
+
         /// <summary>
         /// GetItemsFromArea
         /// </summary>
@@ -406,6 +489,25 @@ namespace GetWeatherInfoFromJMA
             }
 
             return dicAreaItem;
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="elementName"></param>
+        /// <returns></returns>
+        private string GetChildText(XElement element, string elementName)
+        {
+            XNamespace xns = element.Name.Namespace;
+            XElement childElement = element.Element(xns + elementName);
+            if (childElement != null)
+            {
+                return childElement.Value;
+            }
+            return "";
+
 
         }
 

@@ -53,6 +53,7 @@
     <Compile Include="ActivitiesConstraints.cs" />
     <Compile Include="Activities\GetAtomFeed.cs" />
     <Compile Include="Activities\GetForecast.cs" />
+    <Compile Include="Activities\GetTyphoonInfo.cs" />
     <Compile Include="Activities\GetWarning.cs" />
     <Compile Include="Activities\GetXml.cs" />
     <Compile Include="Activities\WeatherInfoScope.cs" />

@@ -56,6 +56,9 @@
     <Compile Include="Designers\GetForecastDesigner.xaml.cs">
       <DependentUpon>GetForecastDesigner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Designers\GetTyphoonInfoDesigner.xaml.cs">
+      <DependentUpon>GetTyphoonInfoDesigner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Designers\GetWarningDesigner.xaml.cs">
       <DependentUpon>GetWarningDesigner.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Designers\GetForecastDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Designers\GetTyphoonInfoDesigner.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

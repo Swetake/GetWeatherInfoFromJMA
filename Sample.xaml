@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sample" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="555,2088" sap2010:WorkflowViewState.IdRef="Sample_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:g="clr-namespace:GetWeatherInfoFromJMA;assembly=GetWeatherInfoFromJMA" xmlns:ga="clr-namespace:GetWeatherInfoFromJMA.Activities;assembly=GetWeatherInfoFromJMA.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sample" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="525,2986" sap2010:WorkflowViewState.IdRef="Sample_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:g="clr-namespace:GetWeatherInfoFromJMA;assembly=GetWeatherInfoFromJMA" xmlns:ga="clr-namespace:GetWeatherInfoFromJMA.Activities;assembly=GetWeatherInfoFromJMA.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -22,10 +22,10 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -42,13 +42,14 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sample" sap:VirtualizedContainerService.HintSize="535,1988" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence DisplayName="Sample" sap:VirtualizedContainerService.HintSize="535,2781" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" Default="[New Dictionary(of String, List(of String))]" Name="dicArea" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(scg:Dictionary(x:String, x:String)))" Name="resWarning" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="resForecast" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="resTyphoon" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -63,13 +64,13 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String) From {"南部"}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ga:WeatherInfoScope DefaultHighFreqEqVol="{x:Null}" DefaultHighFreqExtra="{x:Null}" DefaultHighFreqOther="{x:Null}" DefaultHighFreqRegular="{x:Null}" DefaultLongTermEqVol="{x:Null}" DefaultLongTermOther="{x:Null}" UrlEqVol="{x:Null}" UrlExtra="{x:Null}" UrlOther="{x:Null}" UrlRegular="{x:Null}" DefaultLongTermExtra="True" DefaultLongTermRegular="True" DisplayName="気象情報スコープ" sap:VirtualizedContainerService.HintSize="493,262" sap2010:WorkflowViewState.IdRef="WeatherInfoScope_1">
+    <ga:WeatherInfoScope DefaultHighFreqEqVol="{x:Null}" DefaultHighFreqExtra="{x:Null}" DefaultHighFreqOther="{x:Null}" DefaultHighFreqRegular="{x:Null}" DefaultLongTermEqVol="{x:Null}" DefaultLongTermOther="{x:Null}" UrlEqVol="{x:Null}" UrlExtra="{x:Null}" UrlOther="{x:Null}" UrlRegular="{x:Null}" DefaultLongTermExtra="True" DefaultLongTermRegular="True" DisplayName="気象情報スコープ" sap:VirtualizedContainerService.HintSize="493,324" sap2010:WorkflowViewState.IdRef="WeatherInfoScope_1">
       <ga:WeatherInfoScope.Body>
         <ActivityAction x:TypeArguments="g:Application">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="g:Application" Name="WeatherInfoScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,238" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -77,6 +78,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ga:GetWarning IgnoreIdList="{x:Null}" KeyNameSeparator="{x:Null}" ProcessedIdList="{x:Null}" Area="[dicArea]" DisplayName="警報・注意報の取得" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetWarning_1" Result="[resWarning]" />
             <ga:GetForecast KeyNameSeparator="{x:Null}" Area="[dicArea]" DisplayName="天気予報の取得" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetForecast_1" Result="[resForecast]" />
+            <ga:GetTyphoonInfo IgnoreIdList="{x:Null}" NumberList="{x:Null}" ProcessedIdList="{x:Null}" DisplayName="台風情報の取得" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetTyphoonInfo_1" Result="[resTyphoon]" />
           </Sequence>
         </ActivityAction>
       </ga:WeatherInfoScope.Body>
@@ -161,6 +163,27 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <WriteLine DisplayName="1 行を書き込み" sap:VirtualizedContainerService.HintSize="493,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="--- 台風情報" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="繰り返し (コレクションの各要素)" sap:VirtualizedContainerService.HintSize="493,590" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[resTyphoon.Keys]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="本体" sap:VirtualizedContainerService.HintSize="272,456" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="1 行を書き込み" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;台風&quot;+item+&quot;号&quot;]" />
+            <WriteLine DisplayName="1 行を書き込み" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[resTyphoon(item)(&quot;ReportDateTime&quot;)]" />
+            <WriteLine DisplayName="1 行を書き込み" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[resTyphoon(item)(&quot;Headline&quot;)]" />
+            <WriteLine DisplayName="1 行を書き込み" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[resTyphoon(item)(&quot;Comment&quot;)]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
